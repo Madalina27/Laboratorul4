@@ -1,4 +1,4 @@
-package Ex1;
+package Lab4;
 
 public enum SistemOperare {
     WINDOWS, LINUX

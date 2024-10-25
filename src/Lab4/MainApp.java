@@ -6,11 +6,11 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
-public class Ex1 {
+public class MainApp {
     public static void main(String[] args) throws FileNotFoundException
     {
         List<Echipament> listaEchipamente = new ArrayList<>();
-        Scanner cinf = new Scanner(new File("electronice.txt"));
+        Scanner cinf = new Scanner(new File("echipamente.txt"));
 
         while (cinf.hasNext())
         {
@@ -33,16 +33,16 @@ public class Ex1 {
                     break;
                 case "copiator":
                     int paginiPeToner = Integer.parseInt(line[6]);
-                    FormatCopiere format = FormatCopiere.valueOf(line[7].toUpperCase());
+                    FormatCopiere format = FormatCopiere.A4.valueOf(line[7].toUpperCase());
                     listaEchipamente.add(new Copiator(nume, inv, pret, zona, paginiPeToner, format));
                     break;
-                case "sistem de calcul":
+                case "sistem calcul":
                     String tipMon = line[6];
-                    double vitProc = Double.parseDouble(line[7]);
-                    int hdd = Integer.parseInt(line[8]);
-                    SistemOperare sistemOperare = SistemOperare.valueOf(line[9].toUpperCase());
-                    SistemCalcul sistemDeCalcul = new SistemCalcul(nume, inv, pret, zona, tipMon, vitProc, hdd, sistemOperare);
-                    listaEchipamente.add(sistemDeCalcul);
+                    double vitezaProc = Double.parseDouble(line[7]);
+                    int capacitate_hdd = Integer.parseInt(line[8]);
+                    SistemOperare sistemOperare = SistemOperare.WINDOWS.valueOf(line[9].toUpperCase());
+                    SistemCalcul sistemCalcul = new SistemCalcul(nume, inv, pret, zona, tipMon, vitezaProc, capacitate_hdd, sistemOperare);
+                    listaEchipamente.add(sistemCalcul);
                     break;
                 default:
                     System.out.println("Echipament necunoscut: " + tip);

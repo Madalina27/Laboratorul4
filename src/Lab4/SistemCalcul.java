@@ -1,20 +1,21 @@
-package Ex1;
+package Lab4;
 
-public class SistemCalcul {
+public class SistemCalcul extends Echipament {
     private String tipMon;
-    private int vit_proc;
-    private int c_hdd;
+    private double vitezaProc;
+    private int capacitateHDD;
     private SistemOperare sistemOperare;
 
-    public SistemCalcul(String tip_mon, int vit_proc, int c_hdd, SistemOperare sistemOperare) {
+    public SistemCalcul(String nume, int nr_inv, int pret, String zona, String tip_mon, double vit_proc, int c_hdd, SistemOperare sistemOperare) {
+       super(nume, nr_inv,pret,zona,StareEchipament.ACHIZITIONAT);
         this.tipMon = tipMon;
-        this.vit_proc = vit_proc;
-        this.c_hdd = c_hdd;
+        this.vitezaProc = vitezaProc;
+        this.capacitateHDD = capacitateHDD;
         this.sistemOperare = sistemOperare;
     }
 
     @Override
     public String toString() {
-        return super.toString() + " " + tipMon + " "+ vit_proc + " "+ c_hdd + " "+ sistemOperare;
+        return super.toString() + " " + tipMon + " "+ vitezaProc + " "+ capacitateHDD + " "+ sistemOperare;
     }
 }
